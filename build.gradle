@@ -70,7 +70,7 @@ test {
         //打印失败日志到控制台
         testLogging.showStandardStreams=true
         //配置testng.xml文件位置
-        suites(file("src\\main\\resources\\qacontext\\testng.xml"));
+        suites(file("src/main/resources/qacontext/testng.xml"));
     }
     beforeTest { descriptor ->
         logger.lifecycle("Running test: " + descriptor)
