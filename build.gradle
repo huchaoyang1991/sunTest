@@ -2,6 +2,7 @@ group 'wind.test'
 version '1.0'
 
 apply plugin: 'java'
+apply plugin: 'maven'
 sourceCompatibility = 1.8
 
 repositories {
@@ -62,8 +63,22 @@ dependencies {
 
 }
 //使用TestNG生成测试报告
+
 test {
-    useTestNG()
+
+    useTestNG{
+        //打印失败日志到控制台
+        testLogging.showStandardStreams=true
+        //配置testng.xml文件位置
+        suites(file("src\\main\\resources\\qacontext\\testng.xml"));
+    }
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
+    onOutput { descriptor, event ->
+        logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
+    }
+
 }
 
 //修改gradle 构建编码为UTF-8
