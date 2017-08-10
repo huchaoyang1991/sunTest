@@ -10,4 +10,8 @@ public class TestRun1 {
     public void run(){
         assert true;
     }
+    @Test
+    public void run2(){
+        assert false;
+    }
 }

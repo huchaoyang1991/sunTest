@@ -3,13 +3,13 @@
 <suite name="suiteONE">
     <test name="TestONE" enabled="true">
         <!--包测试-->
-        <!--<packages>
+        <packages>
             <package name="com.sun.test"/>
-        </packages>-->
+        </packages>
         <!--类测试-->
-        <classes>
+        <!--<classes>
             <class name="com.sun.test.TestRun1"></class>
-        </classes>
+        </classes>-->
         <!--组测试-->
         <!-- <groups>
              <run>
